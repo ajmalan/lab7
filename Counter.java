@@ -11,7 +11,7 @@ public class Counter implements ActionListener {
   Counter() {
     JFrame frame = new JFrame("Let's Count");
     frame.setLayout(new FlowLayout());
-    frame.setSize(220, 110);
+    frame.setSize(200, 110);
     JButton left = new JButton("Left");
     JButton right = new JButton("Right");
     leftCount = 0;
@@ -20,8 +20,8 @@ public class Counter implements ActionListener {
     right.addActionListener(this);
     frame.add(left);
     frame.add(right);
-    leftLabel = new JLabel("Count " + leftCount);
-    rightLabel = new JLabel("Count " + rightCount);
+    leftLabel = new JLabel("Count: " + leftCount);
+    rightLabel = new JLabel("Count: " + rightCount);
     frame.add(leftLabel);
     frame.add(rightLabel);
     JButton reset = new JButton("Reset");
@@ -33,18 +33,18 @@ public class Counter implements ActionListener {
   public void actionPerformed(ActionEvent ae) {
     if (ae.getActionCommand().equals("Left")) {
       leftCount += 1;
-      leftLabel.setText("Left Count:" +leftCount);
+      leftLabel.setText("Count:" +leftCount);
       
     }
     else if (ae.getActionCommand().equals("Right")) {
       rightCount += 1;
-      rightLabel.setText("Right Count: "+ rightCount);
+      rightLabel.setText("Count: "+ rightCount);
       
     } else {
       rightCount = 0;
       leftCount = 0;
-      rightLabel.setText("Right Count: "+ rightCount);
-      leftLabel.setText("Left Count:" +leftCount);
+      rightLabel.setText("Count: "+ rightCount);
+      leftLabel.setText("Count:" +leftCount);
       
     }
   }
